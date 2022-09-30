@@ -7,27 +7,30 @@ const Login = () => {
 
     const handleSubmit =(e)=>{
         e.preventDefault()
-        setEntry([...entry])
+        const new_entry = setEntry([...entry,new_entry])
 
 
     }
-    const handleEmail =()=>{
+    const handleEmail =(e)=>{
         setEmail(e.target.value)
     }
-    const handlePassword =()=>{
+    const handlePassword =(e)=>{
         setPassword(e.target.value)
     }
   return (
-    <div>
+    <div className={styles.form_nik}>
       <form onSubmit={handleSubmit}>
         <div>
-        <label forHtml="email"></label>
+        <label >email</label>
+        <br/>
         <input value={email} onChange={handleEmail} name="email" id='email'></input>
         </div>
         <div>
-        <label forHtml="password"></label>
+        <label>Password</label>
+        <br/>
         <input value={password} onChange={handlePassword} name="password" id='password'></input>
         </div>
+        <input className='btn' type="submit" value="Submit"></input>
      
       </form>
     </div>
